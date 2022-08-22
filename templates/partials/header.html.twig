@@ -1,13 +1,62 @@
 {% if page.header%}
 <header>
-<div style="background-color:black;" class="container-fluid"> <p style="color:white;">here trm </div>
-  <nav class="navbar navbar-expand-lg justify-content-between navbar-light bg-light pl-5 pr-5">
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+<div class="tradingview-widget-container__widget">&nbsp;</div>
+
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "description": "Dollar",
+      "proName": "FX_IDC:USDCOP"
+    },
+    {
+      "description": "Ecopetrol",
+      "proName": "BVC:ECOPETROL"
+    },
+    {
+      "description": "Yen",
+      "proName": "JPY/FOREXCOM:USDJPY"
+    },
+    {
+      "description": "Hcolsel",
+      "proName": "BVC:HCOLSEL"
+    },
+    {
+      "description": "Pfcemargos",
+      "proName": "BVC:PFCEMARGOS"
+    },
+    {
+      "description": "Euro",
+      "proName": "EUR/FX_IDC:COPEUR"
+    }
+  ],
+  "showSymbolLogo": false,
+  "colorTheme": "light",
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "locale": "es"
+}
+  </script></div>
+<!-- TradingView Widget END -->
+
+  <nav class="navbar navbar-expand-lg justify-content-between navbar-light pl-5 pr-5">
     {{page.header}}
     <div class="col-sm-6 col-lg-9">
       <div class="custom-flex d-flex justify-content-around">
       {{page.primary_menu}}
       </div>
-      <div>
+      <div class="custom-heigth">
         {{page.secondary_menu}}
       </div>
     </div>
