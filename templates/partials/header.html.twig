@@ -1,0 +1,16 @@
+{% if page.header%}
+<header>
+<div style="background-color:black;" class="container-fluid"> <p style="color:white;">here trm </div>
+  <nav class="navbar navbar-expand-lg justify-content-between navbar-light bg-light pl-5 pr-5">
+    {{page.header}}
+    <div class="col-sm-6 col-lg-9">
+      <div class="custom-flex d-flex justify-content-around">
+      {{page.primary_menu}}
+      </div>
+      <div>
+        {{page.secondary_menu}}
+      </div>
+    </div>
+  </nav>
+</header>
+{% endif %}

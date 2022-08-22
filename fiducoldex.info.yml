@@ -1,0 +1,18 @@
+name: Fiducoldex
+type: theme
+description: tema personalizado para fiducoldex
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+libraries:  
+  - fiducoldex/global-styling
+  - fiducoldex/bootstrap-cdn
+  - fiducoldex/global-scripts
+
+regions:
+  header: 'Cabecera'
+  primary_menu: 'menu primario'
+  secondary_menu: 'menu secundario'
+  content: 'Contenido'
+  footer: 'Pie de Pagina'
+  

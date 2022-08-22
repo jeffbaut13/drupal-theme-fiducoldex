@@ -1,0 +1,26 @@
+global-styling:
+  css:
+    theme:
+      css/estilo.css: {}
+      #css/bs/bootstrap.min.css: {}
+
+bootstrap-cdn:
+  remote: http://getbootstrap.com/
+  license:
+    name: MIT
+    gpl-compatible: false
+  js:
+    //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js: { type: external, minified: true }
+  css:
+    theme:
+      //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css: { type: external }
+  dependencies:
+    - core/jquery
+
+global-scripts:
+  js:
+    js/script.js: {}
+    #js/bs/bootstrap.bundle.min.js: {}
+    #js/bs/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
