@@ -15,5 +15,9 @@ regions:
   primary_menu: 'menu primario'
   secondary_menu: 'menu secundario'
   content: 'Contenido'
+  primary_foot: 'menu primario footer'
+  secondary_foot: 'menu primario footer'
+  third_foot: 'tercer menu footer'
+  four_foot: 'cuarto menu footer'
   footer: 'Pie de Pagina'
   
