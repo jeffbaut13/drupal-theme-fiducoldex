@@ -2,6 +2,7 @@ global-styling:
   css:
     theme:
       css/estilo.css: {}
+      css/home.css: {}
       #css/bs/bootstrap.min.css: {}
 
 bootstrap-cdn:
