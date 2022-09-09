@@ -3,6 +3,7 @@ global-styling:
     theme:
       css/estilo.css: {}
       css/home.css: {}
+      css/nosotros.css: {} 
       #css/bs/bootstrap.min.css: {}
 
 bootstrap-cdn:
