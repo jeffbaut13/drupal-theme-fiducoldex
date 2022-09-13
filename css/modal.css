@@ -6,16 +6,16 @@ padding: 0;
 border: none;
 }
 .modal {
-top: 22vh;
+top: 22vh !important;
 }
 .modal-backdrop {
 top: 22vh;
 }
 .modal-backdrop.show {
-opacity: 0;
+opacity: 0 !important;
 }
 .modal-dialog {
-max-width: 100%;
+max-width: 100% !important;
 margin: 1.75rem auto;
 }
 .custom-modal p {
