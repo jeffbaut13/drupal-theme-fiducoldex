@@ -3,7 +3,7 @@
   padding: 0px;
 }
 .organigrama{
-    width: 160vw;
+    width: 200vw;
     display: block;
     overflow-x: auto;
 }
@@ -115,3 +115,4 @@
   padding: 20px 5px 0px 5px;
   position: relative;
 }
+
