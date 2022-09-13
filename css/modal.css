@@ -1,3 +1,6 @@
+div#exampleModal {
+    padding: 0 !important;
+}
 .modal-content{
     background-color: #f1f2f7;
 }
@@ -9,7 +12,7 @@ border: none;
 top: 22vh !important;
 }
 .modal-backdrop {
-top: 22vh;
+top: 22vh !important;
 }
 .modal-backdrop.show {
 opacity: 0 !important;
