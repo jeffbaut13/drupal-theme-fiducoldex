@@ -1,0 +1,35 @@
+.modal-content{
+    background-color: #f1f2f7;
+}
+.modal-header {
+padding: 0;
+border: none;
+}
+.modal {
+top: 22vh;
+}
+.modal-backdrop {
+top: 22vh;
+}
+.modal-backdrop.show {
+opacity: 0;
+}
+.modal-dialog {
+max-width: 100%;
+margin: 1.75rem auto;
+}
+.custom-modal p {
+margin: 0;
+}
+.pad-l-2{
+padding:0 8%;
+}
+.fw-500{
+font-weight: 500;
+}
+.fw-200{
+font-weight: 200;
+}
+.mb-8{
+margin-bottom: 8% !important;
+}

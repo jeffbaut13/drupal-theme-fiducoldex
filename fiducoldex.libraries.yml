@@ -4,6 +4,7 @@ global-styling:
       css/estilo.css: {}
       css/home.css: {}
       css/nosotros.css: {} 
+      css/modal.css: {} 
       #css/bs/bootstrap.min.css: {}
 
 bootstrap-cdn:
