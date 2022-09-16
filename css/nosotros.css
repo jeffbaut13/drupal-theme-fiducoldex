@@ -169,5 +169,8 @@
 
 @font-face{
 font-family: Segoe UI;
-src:url(../fuentes/Segoe\ UI.ttf);
+src:url(../fuentes/Segoe.ttf);
+}
+body{
+  font-family: Segoe UI !important;
 }
