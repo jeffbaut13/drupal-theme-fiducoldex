@@ -1,8 +1,35 @@
 {% if page.header%}
 <header>
-
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
+<div class="movil tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "description": "Dolar",
+      "proName": "FX_IDC:USDCOP"
+    },
+    {
+      "description": "IPC",
+      "proName": "ECONOMICS:COINTR"
+    },
+    {
+      "description": "Banco de la República",
+      "proName": "ECONOMICS:COGDP"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "es"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget BEGIN -->
+<div class="destopk tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
   {
