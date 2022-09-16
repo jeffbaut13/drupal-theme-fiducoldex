@@ -154,3 +154,15 @@
 .custom-transparencia-acordion span, .custom-transparencia-acordion p, .custom-transparencia-acordion i {
   color: #182942 ;
 }
+
+
+.presentacion {
+  color: #004F7B;
+  line-height: 14px;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+.presentacion {
+  font-size: 13px;
+  font-weight: bold;
+}
