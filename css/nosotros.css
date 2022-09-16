@@ -166,3 +166,8 @@
   font-size: 13px;
   font-weight: bold;
 }
+
+@font-face{
+font-family: Segoe UI;
+src:url(../fuentes/Segoe\ UI.ttf);
+}
