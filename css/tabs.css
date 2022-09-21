@@ -5,7 +5,6 @@
 
     /* Style the tab */
     .tab {
-        float: left;
         margin-top: 2%;
         width: 25%;
         min-height: 1px;
@@ -47,7 +46,6 @@
 
     /* Style the tab content */
     .tabcontent {
-        float: left;
         width: 75%;
         border-left: none;
         min-height: 1px;
