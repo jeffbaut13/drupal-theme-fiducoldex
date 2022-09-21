@@ -1,6 +1,6 @@
 function openCity(evt, cityName) {
     // Declare all variables
-    let i, tabcontent, tablinks;
+    var i, tabcontent, tablinks;
   
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
