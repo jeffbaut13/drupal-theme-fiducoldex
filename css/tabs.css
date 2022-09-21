@@ -6,7 +6,7 @@
     /* Style the tab */
     .tab {
         margin-top: 2%;
-        width: 25%;
+        width: 20%;
         min-height: 1px;
     }
 
@@ -46,7 +46,7 @@
 
     /* Style the tab content */
     .tabcontent {
-        width: 75%;
+        width: 80%;
         border-left: none;
         min-height: 1px;
         margin-top: 2%;
