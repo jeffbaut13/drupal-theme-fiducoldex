@@ -6,6 +6,7 @@ global-styling:
       css/nosotros.css: {} 
       css/modal.css: {} 
       css/movil.css: {} 
+      css/tabs.css: {} 
       #css/bs/bootstrap.min.css: {}
 
 bootstrap-cdn:
