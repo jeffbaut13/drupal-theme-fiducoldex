@@ -247,4 +247,6 @@ a.boton-servicio {
 a.boton-servicio:hover, a.boton-servicio:focus {
   text-decoration: none;
   background: #0747d9;
+  color: white;
+  font-weight: 900;
 }
