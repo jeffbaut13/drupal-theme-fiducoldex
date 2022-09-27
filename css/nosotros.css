@@ -174,3 +174,49 @@ src:url(../fuentes/Segoe.ttf);
 body{
   font-family: Segoe UI !important;
 }
+
+.container_grafico{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5% auto;
+}
+.grafico{
+  width: 400px;
+  height: 400px;
+  border-radius:50%;
+  background-image: conic-gradient(#0d4cd4 90%, #d40d0d 90% 94%, #424242 94% 100%);
+  box-shadow: 1px 1px 5px 1px rgb(70, 70, 70);
+}
+.leyenda-all{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+[class^="color_"]{
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+.color_bancoldex{
+  background-color: #0d4cd4;
+}
+.color_camara{
+  background-color: #d40d0d;
+}
+.color_gremios{
+  background-color: #424242;
+}
+.accionista{
+  color: #000;
+  line-height: 1.6;
+  margin: 0;
+}
+.total{
+  color: #000;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #d1d1d1;
+}
