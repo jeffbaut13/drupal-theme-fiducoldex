@@ -182,8 +182,8 @@ body{
   margin: 5% auto;
 }
 .grafico{
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   border-radius:50%;
   background-image: conic-gradient(#007ff9 90%,#17d700 90% 94%,#00e5e5 94% 100%);
   box-shadow: 1px 1px 5px 1px rgb(70, 70, 70);
