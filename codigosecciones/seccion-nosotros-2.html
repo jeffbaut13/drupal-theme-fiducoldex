@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/de7cfeb0c3.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .custom-acordion-nosotros .custom-coll {
+        position: absolute;
+        left: 20%;
+        top: 0;
+    }
+
+    .custom-acordion-nosotros .row {
+        height: 30vh;
+    }
+
+    .custom-acordion-nosotros hr {
+        border-top: 2px solid #1379ec;
+        width: 100px;
+        text-align: start;
+        margin: 5px 2px;
+    }
+
+    .custom-acordion-nosotros .btn-link {
+        font-weight: 900;
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .custom-acordion-nosotros .btn-link i.fa {
+        color: #1379ec;
+    }
+
+    .custom-acordion-nosotros .btn-link hr {
+        color: #1379ec;
+        width: 100%;
+    }
+
+    .custom-acordion-nosotros button.btn.btn-link.collapsed {
+        color: #a3a3a3;
+        font-weight: 400;
+    }
+
+    .custom-acordion-nosotros button.btn.btn-link.collapsed i.fa {
+        color: #a3a3a3;
+    }
+
+    .custom-acordion-nosotros button.btn.btn-link.collapsed hr {
+        border-top: #a3a3a3;
+    }
+
+    .custom-acordion-nosotros .btn-link:hover,
+    .custom-acordion-nosotros .btn-link:focus {
+        text-decoration: none;
+
+    }
+</style>
+
+<body>
+
+    <style>
+        .organigrama * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .organigrama {
+            width: 130vw;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .organigrama ul {
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .organigrama li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            padding: 20px 5px 0px 5px;
+            position: relative;
+        }
+
+        .organigrama li::before,
+        .organigrama li::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            right: 50%;
+            border-top: 1px solid #27629b;
+            width: 50%;
+            height: 20px;
+        }
+
+        .organigrama li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #27629b;
+        }
+
+        .organigrama li:only-child::before,
+        .organigrama li:only-child::after {
+            display: none;
+        }
+
+        .organigrama li:only-child {
+            padding-top: 0;
+        }
+
+        .organigrama li:first-child::before,
+        .organigrama li:last-child::after {
+            border: 0 none;
+        }
+
+        .organigrama li:last-child::before {
+            border-right: 1px solid #27629b;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+            border-radius: 0 5px 0 0;
+        }
+
+        .organigrama li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+
+        .organigrama ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #27629b;
+            width: 0;
+            height: 20px;
+        }
+
+        .organigrama li a {
+            border: 1px solid #27629b;
+            padding: 1em 0.75em;
+            text-decoration: none;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.5);
+            font-family: arial, verdana, tahoma;
+            font-size: 0.85em;
+            display: inline-block;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-transition: all 500ms;
+            -moz-transition: all 500ms;
+            transition: all 500ms;
+        }
+
+        .organigrama li a:hover {
+            border: 1px solid #fff;
+            color: #ddd;
+            background-color: rgba(39, 98, 155, 0.7);
+            display: inline-block;
+        }
+
+        .organigrama>ul>li>a {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .organigrama>ul>li>ul>li>a {
+            width: 15%;
+        }
+
+        .organigrama li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            padding: 20px 5px 0px 5px;
+            position: relative;
+        }
+    </style>
+    <style>
+        /* torta estadistica */
+        .container_grafico {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 5% auto;
+        }
+
+        .grafico {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background-image: conic-gradient(#0d4cd4 90%, #d40d0d 90% 94%, #424242 94% 100%);
+            box-shadow: 1px 1px 5px 1px rgb(70, 70, 70);
+        }
+
+        .leyenda-all {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        [class^="color_"] {
+            width: 15px;
+            height: 15px;
+            background-color: blue;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+
+        .color_bancoldex {
+            background-color: #0d4cd4;
+        }
+
+        .color_camara {
+            background-color: #d40d0d;
+        }
+
+        .color_gremios {
+            background-color: #424242;
+        }
+
+        .accionista {
+            color: #000;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .total {
+            color: #000;
+            padding: 10px;
+            border-radius: 3px;
+            background-color: #d1d1d1;
+        }
+    </style>
+    <div style="width: 100%; height: 5vh;"></div>
+    <div class="custom-acordion-nosotros container-fluid mt-3 pr-5 pl-5">
+        <div class="row m-0">
+            <div class="tab">
+
+                <h2>
+                    <button class="btn btn-link tablinks active" onclick="openEvent(event, 'nosotros')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <span>Acerca de Nosotros </span>
+                        <hr>
+                    </button>
+                </h2>
+
+                <h2>
+                    <button class="btn btn-link tablinks " onclick="openEvent(event, 'junta')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <span>Junta Directiva </span>
+                        <hr>
+                    </button>
+                </h2>
+
+                <h2>
+                    <button class="btn btn-link tablinks " onclick="openEvent(event, 'organigrama')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <span>Organigrama </span>
+                        <hr>
+                    </button>
+                </h2>
+
+                <h2>
+                    <button class="btn btn-link tablinks " onclick="openEvent(event, 'accionistas')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <span>Accionistas</span>
+                        <hr>
+                    </button>
+                </h2>
+
+                <h2>
+                    <button class="btn btn-link tablinks " onclick="openEvent(event, 'agremiaciones')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <span>Agremiaciones </span>
+                        <hr>
+                    </button>
+                </h2>
+
+                <h2>
+                    <button class="btn btn-link tablinks" onclick="openEvent(event, 'trabaja')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <span>Trabaja con nosotros </span>
+                        <hr>
+                    </button>
+                </h2>
+
+            </div>
+
+            <div id="nosotros" class="tabcontent" style="display: block">
+                <div class="m-0 card-body p-0 pl-5">
+                    <div class="m-0 container p-0">
+                        <div class="m-0 row">
+
+                            <div class="m-0 col-lg-6 d-flex flex-column">
+                                <div class="m-0 d-flex">
+                                    <div class="col-lg-2 p-0 m-0">
+                                        <img style="width: 100%;" alt="mision"
+                                            src="https://demo.fiducoldex.com.co/sites/default/files/2022-09/productividad.png">
+                                    </div>
+                                    <div class="col-lg-10 m-0 d-flex flex-column">
+                                        <h2>Misión</h2>
+                                        <hr style="border-top: 2px solid #1379ec;">
+                                    </div>
+
+                                </div>
+
+                                <p>Ser la entidad que presta soluciones fiduciarias para el sector comercio, industria y
+                                    turismo, alineada con las políticas de desarrollo productivo del país, generando
+                                    alto impacto y valor en los negocios a todos sus grupos de interés.</p>
+                            </div>
+
+                            <div class="m-0 col-lg-6 d-flex flex-column">
+                                <div class="m-0 d-flex">
+                                    <div class="col-lg-2 p-0 m-0">
+                                        <img class="w-100" alt="vision"
+                                            src="https://demo.fiducoldex.com.co/sites/default/files/2022-09/analisis-de-mercado.png">
+                                    </div>
+                                    <div class="col-lg-10 m-0 d-flex flex-column">
+                                        <h2>Visión</h2>
+                                        <hr style="border-top: 2px solid #1379ec;">
+                                    </div>
+
+                                </div>
+
+                                <p>Generar soluciones fiduciarias altamente eficientes acompañadas de niveles superiores
+                                    de rentabilidad, alineadas con las políticas del Grupo Bancóldex, dirigidas al
+                                    sector comercio, industria y turismo y al sector público para promover su
+                                    competitividad, crecimiento y desarrollo empresarial</p>
+                            </div>
+                        </div>
+
+                        <div class="funciones m-0 row">
+                            <div class="d-flex m-0 flex-column">
+                                <div class="m-0 d-flex">
+                                    <div class="col-lg-1 p-0 m-0">
+                                        <img class="w-100" alt="vision"
+                                            src="https://demo.fiducoldex.com.co/sites/default/files/2022-09/analitica.png">
+                                    </div>
+                                    <div class="col-lg-11 m-0 d-flex flex-column">
+                                        <h2>Funciones y deberes</h2>
+                                        <hr style="border-top: 2px solid #1379ec;">
+                                    </div>
+
+                                </div>
+
+                                <p>&gt;Promover las exportaciones colombianas y cumplir otros fines estipulados en el
+                                    Decreto 663 de 1993.</p>
+
+                                <p>&gt;Celebrar contratos de fiducia mercantil en todos sus aspectos y modalidades, de
+                                    acuerdo con las disposiciones normativas vigentes.</p>
+                                <p>&gt;Realizar las operaciones, negocios, actos, encargos y servicios propios de la
+                                    actividad fiduciaria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="junta" class="tabcontent" style="display: none ;">
+                <div class="card-body p-0 pl-5">
+                    <div class="row m-0">
+                        <div class="col-lg-5">
+                            <h2>
+                                Miembros Principales
+                            </h2>
+                            <hr style="border-top: 2px solid #1379ec;">
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Javier Díaz Fajardo</span>
+                            </div>
+
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>José Alberto Garzón Gaitán</span>
+                            </div>
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Beatriz Carbonell</span>
+                            </div>
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Javier Díaz Molina</span>
+                            </div>
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Vicente Dávila</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <h2>
+                                Miembros Suplente
+                            </h2>
+                            <hr style="border-top: 2px solid #1379ec;">
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Claudia González</span>
+                            </div>
+
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>María Paula Correa</span>
+                            </div>
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Carolina Salgado</span>
+                            </div>
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Julián Domínguez</span>
+                            </div>
+                            <div class="m-0 p-0">
+                                <div
+                                    style="margin-right: 10px;background:#1379b7;width:10px;height: 10px;display: inline-block;border-radius: 30%;">
+                                </div>
+                                <span>Edgar Garzón </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="organigrama" class="tabcontent" style="display: none">
+                <div class="card-body p-0 pl-5">
+                    <div style="width: 100%; height: 720px; position: relative;">
+                        <iframe allowfullscreen frameborder="0" style="width:100%; height:720px"
+                            src="https://lucid.app/documents/embedded/dd201e0a-4cea-4a23-9330-323262b08501"
+                            id="8vLSBG8HDQbe"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div id="accionistas" class="tabcontent" style="display: none;">
+                <div class="card-body p-0 pl-5">
+                    <h2 class="title_grafico">Accionistas</h2>
+                    <hr style="border-top: 2px solid #1379ec;">
+                    <div class="container_grafico">
+                        <div class="p-5 grafico">
+                            <div style="border-radius:50%;background-color:#fff;"class="w-100 h-100"></div>
+                        </div>
+                        <div class="container_leyenda">
+                            <span class="leyenda-all">
+                                <span class="color_bancoldex"></span>
+                                <p class="accionista">89.6% Bancóldex</p>
+                            </span>
+
+                            <span class="leyenda-all">
+                                <span class="color_camara"></span>
+                                <p class="accionista">4.3% Cámaras de Comercio</p>
+                            </span>
+
+                            <span class="leyenda-all">
+                                <span class="color_gremios"></span>
+                                <p class="accionista">6.1% Gremios</p>
+                            </span>
+                            <p class="total"> Total: 100%</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="agremiaciones" class="tabcontent" style="display: none;">
+                <div class="card-body p-0 pl-5 h-100">
+                    <div class="row align-items-center m-0 h-100">
+                        <div class="col-lg-5" style="max-width:400px ;">
+                            <img class="w-100"
+                                src="https://demo.fiducoldex.com.co/sites/default/files/2022-09/LOGO%20ASOFIDUCIARIAS%20NUEVO.png"
+                                alt="asofiduciaria">
+                        </div>
+                        <div class="col-lg-5" style="max-width:400px ;">
+                            <img class="w-100"
+                                src="https://demo.fiducoldex.com.co/sites/default/files/2022-09/colcapital-1.png"
+                                alt="asofiduciaria">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trabaja" class="tabcontent" style="display: none;">
+                <div class="card-body p-0 pl-5">
+                    <p class="text-justify pr-3">En Fiducoldex, cada uno de nosotros contribuye al fortalecimiento de la
+                        competitividad
+                        empresarial nacional e internacional, alineados al desarrollo de la Política Pública de
+                        Comercio, Industria y Turismo. </p>
+                    <p class="text-justify pr-3">¡Únete a la comunidad Fiducoldex! Contamos con un talento humano
+                        comprometido, disciplinado y
+                        confiable. </p>
+                    <p>Conoce aquí nuestras convocatorias:</p>
+                    <div class="row m-0 h-100 w-100">
+                        <div style="background:#c4e2d7;" class="col-lg-4 m-0 p-3">
+
+                            <h2 style="color:#89b040;font-size: 2rem;font-weight:900;">Confianza</h2>
+                            <p style="color:#89b040;" class="text-justify pr-3">
+                                Defender y ser fieles a nuestra misión y visión, generando un
+                                sentimiento de seguridad a los grupos de interés sobre la adecuada administración de sus
+                                recursos.
+                            </p>
+                        </div>
+                        <div style="background:#fad1c4;" class="col-lg-4 m-0 p-3">
+                            <h2 style="color:#ff9778;font-size: 2rem;font-weight:900;">Compromiso</h2>
+                            <p style="color:#ff9778;" class="text-justify pr-3">Cumplir con las responsabilidades
+                                adquiridas en los términos
+                                acordados, generando resultados en el tiempo adecuado y asegurando calidad desde el
+                                inicio.</p>
+                        </div>
+
+                        <div style="background:#fee5b2;" class="col-lg-4 m-0 p-3">
+                            <h2 style="color:#fdb72a;font-size: 2rem;font-weight:900;">Disciplina</h2>
+                            <p style="color:#fdb72a;" class="text-justify pr-3">Seguir el plan trazado con la convicción
+                                de desarrollar las
+                                actividades oportuna y efectivamente.</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 h-100 w-100">
+                        <div style="background:#dccfe7;" class="col-lg-6 m-0 p-3">
+                            <h2 style="color:#b868fa;font-size: 2rem;font-weight:900;">Respeto</h2>
+                            <p style="color:#b868fa;" class="text-justify pr-3">Valorar la diversidad para el logro de
+                                los objetivos
+                                corporativos.</p>
+                        </div>
+
+                        <div style="background:#d3ecf7;" class="col-lg-6 m-0 p-3">
+                            <h2 style="color:#48c6fc;font-size: 2rem;font-weight:900;">Comunicación</h2>
+                            <p style="color:#48c6fc;" class="text-justify pr-3">Dialogar de manera transparente, cordial
+                                y
+                                permanente.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
